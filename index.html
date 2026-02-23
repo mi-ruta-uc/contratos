@@ -209,8 +209,8 @@
                 <i data-lucide="calculator" class="absolute -bottom-16 -right-16 w-80 h-80 text-indigo-800 opacity-40"></i>
             </div>
 
-            <div class="lg:col-span-12 bg-white p-10 rounded-[3rem] shadow-lg border border-slate-200 overflow-hidden">
-                <h3 class="text-3xl font-black text-slate-800 mb-8 flex items-center gap-4"><i data-lucide="clipboard-list" class="text-indigo-600 w-10 h-10"></i> Tabla Histórica de Indemnización</h3>
+            <div class="lg:col-span-12 bg-white p-10 rounded-[3rem] shadow-lg border border-slate-200 overflow-hidden text-center">
+                <h3 class="text-3xl font-black text-slate-800 mb-8 flex items-center justify-center gap-4"><i data-lucide="clipboard-list" class="text-indigo-600 w-10 h-10"></i> Tabla Histórica de Indemnización</h3>
                 
                 <div class="overflow-x-auto pb-4">
                     <table class="w-full text-center border-collapse min-w-[1000px] table-projection bg-white">
@@ -246,7 +246,7 @@
                     </table>
                 </div>
                 
-                <div class="mt-8 p-6 bg-emerald-50 rounded-2xl border-2 border-emerald-100 flex gap-4 items-center shadow-sm">
+                <div class="mt-8 p-6 bg-emerald-50 rounded-2xl border-2 border-emerald-100 flex gap-4 items-center shadow-sm justify-center">
                     <i data-lucide="shield-alert" class="w-10 h-10 text-emerald-600 flex-shrink-0"></i>
                     <p class="text-base text-emerald-900 leading-snug font-bold">
                         Bajo la Ley 2466 de 2025, la proporcionalidad es exacta por cada día laborado después del primer año.
@@ -268,10 +268,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="p-12 bg-slate-900 rounded-[3.5rem] text-white flex flex-col justify-center items-center shadow-2xl text-center">
-                    <p id="indem-result" class="text-7xl font-black text-emerald-400 mb-4 tracking-tighter">$ 0</p>
-                    <p class="text-lg uppercase font-black text-slate-400 tracking-[0.3em]">Indemnización Art. 64</p>
-                    <p id="indem-days" class="mt-8 text-indigo-400 font-black text-xl uppercase tracking-widest">0 Días</p>
+                <div class="p-10 bg-slate-900 rounded-[3.5rem] text-white flex flex-col justify-center items-center shadow-2xl text-center border-4 border-slate-800">
+                    <p id="indem-result" class="text-5xl md:text-6xl font-black text-emerald-400 mb-4 tracking-tighter">$ 0</p>
+                    <p class="text-sm uppercase font-black text-slate-400 tracking-[0.4em] mb-8">Indemnización Art. 64</p>
+                    <div class="bg-slate-800/50 px-8 py-4 rounded-2xl border border-slate-700">
+                        <p id="indem-days" class="text-indigo-400 font-black text-xl uppercase tracking-widest leading-none">0 Días a indemnizar</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -488,17 +490,17 @@
             let text = `${isPractica ? 'CONVENIO DE PRÁCTICA ACADÉMICA' : 'CONTRATO INDIVIDUAL DE TRABAJO ' + typeLabel}\n\n`;
             text += `CIUDAD: ${city}\n`;
             text += `FECHA DE ELABORACIÓN: ${new Date().toLocaleDateString()}\n\n`;
-            text += `Entre los suscritos a saber: ${employer}, sociedad legalmente constituida con NIT ${nit}, representada por su Representante Legal ${rep}, en adelante EL EMPLEADOR, y de otra parte ${employee}, con documento de identidad No. ${id}, en adelante EL TRABAJADOR, se ha convenido celebrar el presente contrato bajo las siguientes cláusulas:\n\n`;
+            text += `Entre los suscritos a saber: ${employer}, NIT ${nit}, representada por ${rep}, en adelante EL EMPLEADOR, y de otra parte ${employee}, con documento No. ${id}, en adelante EL TRABAJADOR, se ha convenido celebrar el presente contrato laboral bajo las siguientes cláusulas:\n\n`;
             text += `PRIMERA. OBJETO: El trabajador desempeñará las funciones de: ${object}.\n\n`;
-            if(isPractica) text += `SEGUNDA. NATURALEZA: Documento estrictamente educativo. Auxilio económico mensual de $${parseFloat(salaryValue).toLocaleString()}.\n\n`;
+            if(isPractica) text += `SEGUNDA. NATURALEZA: Documento educativo, no laboral. Auxilio económico mensual de $${parseFloat(salaryValue).toLocaleString()}.\n\n`;
             else text += `SEGUNDA. REMUNERACIÓN: EL EMPLEADOR pagará un SALARIO mensual de $${parseFloat(salaryValue).toLocaleString()} COP con plenos derechos de ley.\n\n`;
             text += `TERCERA. DURACIÓN: Desde el ${start}. `;
             if(['fijo', 'aprendizaje', 'ocasional'].includes(type)) text += `Vence el ${end}. `;
-            else text += `Duración indefinida mientras subsistan las causas que le dieron origen.`;
+            else text += `Duración indefinida.`;
             text += `\n\n`;
-            if(conf) text += `CUARTA. CONFIDENCIALIDAD: El trabajador guardará reserva sobre información técnica y comercial.\n\n`;
-            if(excl) text += `QUINTA. EXCLUSIVIDAD: El trabajador prestará sus servicios de manera exclusiva a EL EMPLEADOR.\n\n`;
-            text += `\nEn señal de conformidad se firma:\n\n\n__________________________          __________________________\nPOR EL EMPLEADOR                    POR EL TRABAJADOR / ESTUDIANTE\nNIT: ${nit}                         CC: ${id}`;
+            if(conf) text += `CUARTA. CONFIDENCIALIDAD: Reserva sobre secretos comerciales e industriales.\n\n`;
+            if(excl) text += `QUINTA. EXCLUSIVIDAD: El trabajador prestará servicios exclusivamente a EL EMPLEADOR.\n\n`;
+            text += `\nPara constancia se firma por las partes:\n\n\n__________________________          __________________________\nPOR EL EMPLEADOR                    POR EL TRABAJADOR\nNIT: ${nit}                         CC: ${id}`;
             document.getElementById('minute-placeholder').classList.add('hidden');
             document.getElementById('minute-preview').classList.remove('hidden');
             document.getElementById('printable-area').innerText = text;
