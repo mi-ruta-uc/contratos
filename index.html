@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cátedra Laboral 2026 - UC</title>
+    <title>Administración de Salarios 2026 - UC</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -24,12 +24,12 @@
         }
 
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-        .accordion-item.active .accordion-content { max-height: 1000px; }
+        .accordion-item.active .accordion-content { max-height: 1200px; }
         .accordion-item.active .chevron { transform: rotate(180deg); }
 
         .table-projection th, .table-projection td {
             border: 1px solid #e2e8f0;
-            padding: 1.5rem;
+            padding: 1rem;
         }
     </style>
 </head>
@@ -40,11 +40,11 @@
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-6">
                 <div class="bg-white p-3 rounded-2xl shadow-lg border-2 border-indigo-200">
-                    <img src="https://uc.datasae.co/siga_new/web/documentos/uc.datasae.co/logo/logo.png" alt="Logo" class="h-16 w-auto">
+                    <img src="https://i.imgur.com/cjfV02r.png" alt="Logo Universidad Central" class="h-16 w-auto object-contain">
                 </div>
                 <div>
-                    <h1 class="text-3xl font-black tracking-tighter uppercase leading-none">Cátedra Laboral 2026</h1>
-                    <p class="text-indigo-300 text-sm font-bold uppercase tracking-widest italic mt-1">Admin. de Salarios • Ley 2466 de 2025</p>
+                    <h1 class="text-3xl font-black tracking-tighter uppercase leading-none">Administración de Salarios 2026</h1>
+                    <p class="text-indigo-300 text-sm font-bold uppercase tracking-widest italic mt-1">Ley 2466 de 2025</p>
                 </div>
             </div>
             <nav class="flex bg-slate-900 rounded-2xl p-1.5 border border-slate-800 overflow-x-auto shadow-inner">
@@ -66,10 +66,15 @@
                         <i data-lucide="graduation-cap" class="w-12 h-12 text-indigo-400"></i>
                         <h2 class="text-4xl font-black uppercase tracking-tight">Definición del Contrato</h2>
                     </div>
-                    <p class="text-3xl leading-relaxed font-medium mb-8 text-indigo-50 italic">
+                    <p class="text-3xl md:text-4xl leading-relaxed font-medium mb-8 text-indigo-50 italic">
                         "El contrato de trabajo es aquel por el cual una persona natural se obliga a prestar un servicio personal a otra persona, natural o jurídica, bajo la continuada dependencia o subordinación de la segunda y mediante remuneración." (Art. 22 CST)
                     </p>
+                    <div class="flex gap-4 items-center bg-indigo-950/50 p-6 rounded-2xl border border-indigo-700 w-fit">
+                        <i data-lucide="info" class="text-indigo-400 w-6 h-6"></i>
+                        <p class="text-base font-bold text-indigo-200">Fuente: Artículo 22 del CST.</p>
+                    </div>
                 </div>
+                <i data-lucide="briefcase" class="absolute -bottom-20 -right-20 w-96 h-96 text-indigo-800 opacity-20"></i>
             </section>
 
             <section class="grid md:grid-cols-2 gap-10">
@@ -93,13 +98,13 @@
                 <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-200 flex flex-col justify-center">
                     <h3 class="text-3xl font-black text-slate-800 flex items-center gap-3 mb-8"><i data-lucide="pen-tool" class="w-8 h-8 text-indigo-600"></i> Clasificación por Forma</h3>
                     <div class="space-y-6">
-                        <div class="p-8 bg-slate-100 rounded-3xl border border-slate-200">
-                            <h4 class="font-black text-xl text-indigo-700">Verbal</h4>
-                            <p class="text-lg">Presunción de Término Indefinido. Acuerdo de palabra.</p>
+                        <div class="p-8 bg-slate-100 rounded-3xl border border-slate-200 hover:bg-white transition-colors">
+                            <h4 class="font-black text-xl text-indigo-700 uppercase mb-2">Verbal</h4>
+                            <p class="text-lg text-slate-600 font-medium">Se presume a Término Indefinido. Acuerdo de palabra sobre sitio, labor y pago conforme a la primacía de la realidad.</p>
                         </div>
-                        <div class="p-8 bg-slate-100 rounded-3xl border border-slate-200">
-                            <h4 class="font-black text-xl text-indigo-700">Escrito</h4>
-                            <p class="text-lg">Obligatorio para Término Fijo y Aprendizaje laboralizado.</p>
+                        <div class="p-8 bg-slate-100 rounded-3xl border border-slate-200 hover:bg-white transition-colors">
+                            <h4 class="font-black text-xl text-indigo-700 uppercase mb-2">Escrito</h4>
+                            <p class="text-lg text-slate-600 font-medium">Obligatorio para Término Fijo, Aprendizaje y Periodos de Prueba. Brinda plena seguridad probatoria para ambas partes.</p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +123,6 @@
                     <h2 class="text-3xl font-black text-indigo-900 mb-8 flex items-center gap-4"><i data-lucide="settings" class="w-10 h-10"></i> Configuración Legal</h2>
                     
                     <div class="space-y-6">
-                        <!-- Tipo de Contrato -->
                         <div>
                             <label class="text-xs font-black text-slate-400 uppercase mb-2 block tracking-widest">Tipo de Vínculo</label>
                             <select id="contract-type" onchange="toggleEndDateField()" class="w-full p-4 rounded-xl border-2 border-slate-100 bg-slate-50 font-bold text-slate-700 text-lg focus:border-indigo-500 outline-none">
@@ -131,7 +135,6 @@
                             </select>
                         </div>
 
-                        <!-- Datos del Empleador -->
                         <div class="space-y-4">
                             <h3 class="text-sm font-black text-indigo-600 uppercase tracking-widest border-b pb-1">Datos del Empleador</h3>
                             <div class="grid grid-cols-2 gap-4">
@@ -142,7 +145,6 @@
                             <input type="text" id="location" class="w-full p-4 rounded-xl border-2 border-slate-100 text-lg font-bold" placeholder="Ubicación (Ciudad)">
                         </div>
 
-                        <!-- Datos del Empleado -->
                         <div class="space-y-4">
                             <h3 class="text-sm font-black text-indigo-600 uppercase tracking-widest border-b pb-1">Datos del Empleado</h3>
                             <input type="text" id="employee-name" class="w-full p-4 rounded-xl border-2 border-slate-100 text-lg font-bold" placeholder="Nombre Completo">
@@ -153,11 +155,10 @@
                                     <input type="number" id="contract-salary" class="w-full p-4 pl-8 rounded-xl border-2 border-slate-100 text-lg font-mono font-black" placeholder="Salario">
                                 </div>
                                 <div class="relative">
-                                    <label class="text-[10px] absolute -top-2 left-3 bg-white px-1 text-slate-400 font-bold">FECHA INICIO</label>
+                                    <label class="text-[10px] absolute -top-2 left-3 bg-white px-1 text-slate-400 font-bold uppercase">Inicio</label>
                                     <input type="date" id="start-date" class="w-full p-4 rounded-xl border-2 border-slate-100 text-lg font-black text-slate-700">
                                 </div>
                             </div>
-                            <!-- Fecha Fin Condicional -->
                             <div id="end-date-container" class="hidden animate-in fade-in">
                                 <label class="text-[10px] text-slate-400 font-bold uppercase mb-1 block">Fecha de Finalización</label>
                                 <input type="date" id="end-date" class="w-full p-4 rounded-xl border-2 border-slate-100 text-lg font-black text-slate-700">
@@ -165,7 +166,6 @@
                             <input type="text" id="work-object" class="w-full p-4 rounded-xl border-2 border-slate-100 text-lg font-medium" placeholder="Cargo u Objeto del Contrato">
                         </div>
 
-                        <!-- Cláusulas Opcionales -->
                         <div class="space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-200">
                             <h3 class="text-sm font-black text-slate-500 uppercase tracking-widest">Cláusulas Opcionales</h3>
                             <div class="flex flex-col gap-3">
@@ -193,9 +193,7 @@
                             <span class="font-bold text-sm uppercase flex items-center gap-3"><i data-lucide="file-text" class="text-indigo-400 w-6 h-6"></i> Minuta Legal Generada</span>
                             <button onclick="window.print()" class="bg-emerald-600 text-white px-10 py-4 rounded-2xl font-black shadow-lg">IMPRIMIR / PDF</button>
                         </div>
-                        <div id="printable-area" class="p-20 font-serif text-xl leading-[1.8] whitespace-pre-wrap bg-white text-slate-800 h-[85vh] overflow-y-auto border-t-8 border-indigo-600 shadow-inner">
-                            <!-- Texto del contrato -->
-                        </div>
+                        <div id="printable-area" class="p-20 font-serif text-xl leading-[1.8] whitespace-pre-wrap bg-white text-slate-800 h-[85vh] overflow-y-auto border-t-8 border-indigo-600 shadow-inner"></div>
                     </div>
                 </div>
             </div>
@@ -203,49 +201,56 @@
 
         <!-- SECCIÓN 3: INDEMNIZACIÓN -->
         <div id="indem" class="tab-content space-y-12 animate-in slide-in-from-right-8 duration-700">
-            <!-- (Contenido igual que la versión anterior pero con diseño mantenido) -->
             <div class="bg-indigo-900 text-white p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
                 <div class="relative z-10 max-w-3xl">
-                    <h2 class="text-5xl font-black mb-6 uppercase tracking-tight">Artículo 64 del CST</h2>
+                    <h2 class="text-5xl font-black mb-6 uppercase tracking-tight leading-tight">Artículo 64 del CST</h2>
                     <p class="text-2xl text-indigo-100 font-medium italic">Protocolo de cálculo para terminación unilateral sin justa causa.</p>
                 </div>
                 <i data-lucide="calculator" class="absolute -bottom-16 -right-16 w-80 h-80 text-indigo-800 opacity-40"></i>
             </div>
 
             <div class="lg:col-span-12 bg-white p-10 rounded-[3rem] shadow-lg border border-slate-200 overflow-hidden">
-                <h3 class="text-3xl font-black text-slate-800 mb-10 flex items-center gap-4"><i data-lucide="clipboard-list" class="text-indigo-600 w-10 h-10"></i> Tabla de Indemnización</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-center border-collapse min-w-[1000px] table-projection">
+                <h3 class="text-3xl font-black text-slate-800 mb-8 flex items-center gap-4"><i data-lucide="clipboard-list" class="text-indigo-600 w-10 h-10"></i> Tabla Histórica de Indemnización</h3>
+                
+                <div class="overflow-x-auto pb-4">
+                    <table class="w-full text-center border-collapse min-w-[1000px] table-projection bg-white">
                         <thead class="bg-slate-900 text-white">
                             <tr>
-                                <th rowspan="2" class="bg-slate-950 uppercase">Fecha de Ingreso</th>
-                                <th colspan="2" class="bg-indigo-900 uppercase">Salario Inferior a 10 SMLV</th>
-                                <th colspan="2" class="bg-slate-800 uppercase">Salario Superior a 10 SMLV</th>
+                                <th rowspan="2" class="bg-slate-950 uppercase text-sm font-black p-4">Fecha de Ingreso</th>
+                                <th colspan="2" class="bg-indigo-900 uppercase text-base font-black p-4 border-l border-slate-700">Salario Inferior a 10 SMLV</th>
+                                <th colspan="2" class="bg-slate-800 uppercase text-base font-black p-4 border-l border-slate-700">Salario Superior a 10 SMLV</th>
                             </tr>
-                            <tr class="bg-slate-800 text-xs font-black uppercase">
-                                <th>1er Año (Días)</th>
-                                <th>Siguientes (Días)</th>
-                                <th>1er Año (Días)</th>
-                                <th>Siguientes (Días)</th>
+                            <tr class="bg-slate-800 text-[10px] font-black uppercase">
+                                <th class="p-2 border-l border-slate-700">1er Año de Servicio <br>(N° Días)</th>
+                                <th class="p-2 border-l border-slate-700">Años Sigs o Proporción <br>(N° Días)</th>
+                                <th class="p-2 border-l border-slate-700">1er Año de Servicio <br>(N° Días)</th>
+                                <th class="p-2 border-l border-slate-700">Años Sigs o Proporción <br>(N° Días)</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100">
-                            <tr class="bg-slate-50">
-                                <td class="font-black text-slate-900 uppercase leading-tight">Antes de Dic. 1992</td>
-                                <td class="font-black text-5xl text-indigo-600">45</td>
-                                <td class="font-black text-5xl text-indigo-600">40</td>
-                                <td class="font-black text-4xl text-slate-400">30</td>
-                                <td class="font-black text-4xl text-slate-400">20</td>
+                            <tr>
+                                <td class="font-black text-slate-800 uppercase text-sm bg-slate-50/50 p-6">Antes de Diciembre de 1992</td>
+                                <td class="font-black text-3xl text-indigo-600 p-6">45</td>
+                                <td class="font-black text-3xl text-indigo-600 p-6">40</td>
+                                <td class="font-black text-2xl text-slate-500 p-6">30</td>
+                                <td class="font-black text-2xl text-slate-500 p-6">20</td>
                             </tr>
-                            <tr class="bg-white">
-                                <td class="font-black text-slate-900 uppercase leading-tight">Posterior Ene. 1993</td>
-                                <td class="font-black text-5xl text-indigo-600">30</td>
-                                <td class="font-black text-5xl text-indigo-600">20</td>
-                                <td class="font-black text-4xl text-slate-400">20</td>
-                                <td class="font-black text-4xl text-slate-400">15</td>
+                            <tr>
+                                <td class="font-black text-slate-800 uppercase text-sm bg-slate-50/50 p-6">Posterior a Enero de 1993</td>
+                                <td class="font-black text-3xl text-indigo-600 p-6">30</td>
+                                <td class="font-black text-3xl text-indigo-600 p-6">20</td>
+                                <td class="font-black text-2xl text-slate-500 p-6">20</td>
+                                <td class="font-black text-2xl text-slate-500 p-6">15</td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+                
+                <div class="mt-8 p-6 bg-emerald-50 rounded-2xl border-2 border-emerald-100 flex gap-4 items-center shadow-sm">
+                    <i data-lucide="shield-alert" class="w-10 h-10 text-emerald-600 flex-shrink-0"></i>
+                    <p class="text-base text-emerald-900 leading-snug font-bold">
+                        Bajo la Ley 2466 de 2025, la proporcionalidad es exacta por cada día laborado después del primer año.
+                    </p>
                 </div>
             </div>
 
@@ -254,19 +259,19 @@
                     <h3 class="text-3xl font-black text-slate-800 mb-10 flex items-center gap-4"><i data-lucide="calculator" class="text-indigo-600 w-10 h-10"></i> Calculadora (Indefinido)</h3>
                     <div class="space-y-8">
                         <div>
-                            <label class="text-xs font-black text-slate-400 uppercase mb-3 block tracking-widest">Salario Bruto</label>
-                            <input type="number" id="calc-salary" class="w-full p-6 bg-slate-50 rounded-2xl border-4 border-slate-100 font-mono font-black text-4xl" value="2000000" oninput="calculateIndem()">
+                            <label class="text-xs font-black text-slate-400 uppercase mb-3 block tracking-widest">Salario Mensual Bruto</label>
+                            <input type="number" id="calc-salary" class="w-full p-6 bg-slate-50 rounded-2xl border-4 border-slate-100 font-mono font-black text-4xl focus:border-indigo-500 outline-none transition-all" value="2000000" oninput="calculateIndem()">
                         </div>
                         <div class="grid grid-cols-2 gap-8">
-                            <div><label class="text-xs font-black text-slate-400 mb-3 block uppercase">Inicio</label><input type="date" id="calc-start" class="w-full p-6 bg-slate-50 rounded-2xl border-2 font-bold" value="2020-01-01" oninput="calculateIndem()"></div>
-                            <div><label class="text-xs font-black text-slate-400 mb-3 block uppercase">Retiro</label><input type="date" id="calc-end" class="w-full p-6 bg-slate-50 rounded-2xl border-2 font-bold" value="2026-01-01" oninput="calculateIndem()"></div>
+                            <div><label class="text-xs font-black text-slate-400 mb-3 block uppercase">Fecha Vinculación</label><input type="date" id="calc-start" class="w-full p-6 bg-slate-50 rounded-2xl border-2 font-bold" value="2020-01-01" oninput="calculateIndem()"></div>
+                            <div><label class="text-xs font-black text-slate-400 mb-3 block uppercase">Fecha Despido</label><input type="date" id="calc-end" class="w-full p-6 bg-slate-50 rounded-2xl border-2 font-bold" value="2026-01-01" oninput="calculateIndem()"></div>
                         </div>
                     </div>
                 </div>
                 <div class="p-12 bg-slate-900 rounded-[3.5rem] text-white flex flex-col justify-center items-center shadow-2xl text-center">
-                    <p id="indem-result" class="text-7xl font-black text-emerald-400 mb-4">$ 0</p>
-                    <p class="text-lg uppercase font-black text-slate-400 tracking-[0.3em]">Indemnización Estimada</p>
-                    <p id="indem-days" class="mt-8 text-indigo-400 font-black text-xl">0 Días</p>
+                    <p id="indem-result" class="text-7xl font-black text-emerald-400 mb-4 tracking-tighter">$ 0</p>
+                    <p class="text-lg uppercase font-black text-slate-400 tracking-[0.3em]">Indemnización Art. 64</p>
+                    <p id="indem-days" class="mt-8 text-indigo-400 font-black text-xl uppercase tracking-widest">0 Días</p>
                 </div>
             </div>
         </div>
@@ -276,7 +281,7 @@
             <div class="bg-rose-900 text-white p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
                 <div class="relative z-10 max-w-4xl">
                     <h2 class="text-5xl font-black mb-6 uppercase tracking-tight">Artículo 62 del CST</h2>
-                    <p class="text-2xl text-rose-100 leading-relaxed font-medium italic">Régimen disciplinario y terminación unilateral.</p>
+                    <p class="text-2xl text-rose-100 leading-relaxed font-medium italic">Régimen disciplinario y causales de terminación unilateral.</p>
                 </div>
                 <i data-lucide="shield-x" class="absolute -bottom-16 -right-16 w-80 h-80 text-rose-800 opacity-30"></i>
             </div>
@@ -294,31 +299,108 @@
 
     </main>
 
+    <footer class="mt-24 border-t border-slate-200 p-16 text-center no-print flex flex-col items-center gap-6">
+        <img src="https://i.imgur.com/cjfV02r.png" alt="Logo Universidad Central" class="h-14 w-auto grayscale opacity-50">
+        <p class="text-sm font-black text-slate-400 uppercase tracking-[0.4em]">Administración de Salarios 2026 | Universidad Central</p>
+    </footer>
+
     <script>
         const SMLV_2026 = 1560000;
 
         const contractTypes = {
-            indefinido: { name: 'Término Indefinido', description: 'Modelo preferente Ley 2466/25.', duration: 'Permanente', trial: 'Máx. 2 meses', characterization: ["Estabilidad reforzada.", "Indemnización completa despido injustificado.", "Aportes integrales."] },
-            fijo: { name: 'Término Fijo', description: 'Requiere causa real temporal.', duration: 'Máximo 3 años', trial: '1/5 del término', characterization: ["Conversión automática al superar 3 años.", "Preaviso de 30 días obligatorio.", "Liquidación proporcional."] },
-            aprendizaje: { name: 'Aprendizaje (Laboralizado)', description: 'Reforma 2025.', duration: 'Hasta 36 meses', trial: 'No aplica', characterization: ["Laboralizado con salario.", "Derecho a Prima y Cesantías.", "Seguridad Social 100% empresa."] },
-            ocasional: { name: 'Ocasional o Transitorio', description: 'Labores ajenas al giro ordinario.', duration: 'Menor a 30 días', trial: 'No aplica', characterization: ["Salud, Pensión y ARL obligatorios.", "Liquidación proporcional días laborados."] },
-            practica: { name: 'Pasantía Académica', description: 'Convenio educativo.', duration: 'Calendario académico', trial: 'No aplica', characterization: ["No es contrato de trabajo.", "Auxilio de práctica (No salarial).", "ARL obligatoria."] },
-            obra: { name: 'Obra o Labor', description: 'Vinculación por proyecto.', duration: 'Hito técnico', trial: 'Máx. 2 meses', characterization: ["Finaliza al entregar la obra.", "No requiere preaviso.", "Detalle técnico vital."] }
+            indefinido: { 
+                name: 'Término Indefinido', 
+                description: 'Modelo preferente Ley 2466/25.', 
+                duration: 'Permanente (Sin fecha de fin)', 
+                trial: 'Máximo 2 meses', 
+                characterization: [
+                    "Estabilidad laboral reforzada: El vínculo solo termina por justa causa debidamente probada o mutuo acuerdo.",
+                    "Indemnización completa: En caso de despido injustificado, se aplica la tabla progresiva del Art. 64 CST por lucro cesante.",
+                    "Aportes integrales: Obligación de cotizar a Salud, Pensión, ARL y Caja de Compensación sobre el 100% del salario.",
+                    "Pago de prestaciones sociales: Derecho a Prima de Servicios, Cesantías, Intereses sobre Cesantías y Vacaciones al 100%."
+                ] 
+            },
+            fijo: { 
+                name: 'Término Fijo', 
+                description: 'Requiere causa real temporal demostrable.', 
+                duration: 'Máximo 3 años (incluyendo prórrogas)', 
+                trial: '1/5 del término (máx. 2 meses)', 
+                characterization: [
+                    "Condición de Conversión: Si el contrato o sus prórrogas superan los 3 años acumulados, se convierte automáticamente en Término Indefinido.",
+                    "Preaviso Obligatorio: El empleador debe notificar la no renovación con al menos 30 días calendario de antelación.",
+                    "Justificación de Temporalidad: Bajo la Ley 2466, se debe justificar técnicamente por qué la labor no es de carácter permanente.",
+                    "Liquidación proporcional: Al finalizar el término pactado, se deben liquidar todas las prestaciones sociales por el tiempo laborado."
+                ] 
+            },
+            aprendizaje: { 
+                name: 'Aprendizaje (Laboralizado)', 
+                description: 'Reforma Laboral 2025.', 
+                duration: 'Hasta 36 meses (3 años)', 
+                trial: 'No aplica (Etapa formativa)', 
+                characterization: [
+                    "Laboralización Total: Por la Ley 2466 de 2025, el aprendiz recibe un SALARIO (mínimo 1 SMLV en productiva) con todos los derechos de ley.",
+                    "Prestaciones Sociales: Derecho a percibir Prima de servicios y Cesantías, beneficios inexistentes antes de la reforma.",
+                    "Seguridad Social Integral: Cotización obligatoria a Pensión, Salud y ARL (pagado 100% por la empresa patrocinadora).",
+                    "Dualidad Formativa: Las funciones deben estar estrictamente alineadas con el programa de formación técnica o profesional."
+                ] 
+            },
+            ocasional: { 
+                name: 'Ocasional o Transitorio', 
+                description: 'Labores extraordinarias ajenas al giro ordinario.', 
+                duration: 'Menor a 1 mes (30 días)', 
+                trial: 'No aplica', 
+                characterization: [
+                    "Naturaleza Accidental: Destinado a labores que no pertenecen a las actividades normales del empleador (ej: reparaciones locativas).",
+                    "Seguridad Social Completa: Obligación de afiliación a Salud, PENSIÓN y Riesgos Laborales (ARL) desde el primer día de labor.",
+                    "Derechos Prestacionales: El trabajador tiene derecho a la liquidación proporcional de primas, cesantías y vacaciones por los días laborados.",
+                    "Límite Temporal: Si la labor excede los 30 días, el contrato pierde su esencia ocasional y puede derivar en un contrato fijo o indefinido."
+                ] 
+            },
+            practica: { 
+                name: 'Pasantía Académica', 
+                description: 'Vínculo estrictamente educativo.', 
+                duration: 'Sujeto a calendario académico', 
+                trial: 'No aplica', 
+                characterization: [
+                    "No constituye Contrato de Trabajo: Es un convenio institucional donde no existe subordinación laboral sino académica.",
+                    "Auxilio de Práctica: Se pacta un auxilio económico para transporte o alimentación que NO tiene carácter salarial ni prestacional.",
+                    "ARL Obligatoria: La afiliación a Riesgos Laborales es responsabilidad de la empresa o la institución para proteger al estudiante.",
+                    "Certificación Pedagógica: La empresa debe emitir un informe de cumplimiento de objetivos para la validación del grado académico."
+                ] 
+            },
+            obra: { 
+                name: 'Obra o Labor', 
+                description: 'Vinculación por proyecto técnico específico.', 
+                duration: 'Hasta la entrega del hito material', 
+                trial: 'Máximo 2 meses', 
+                characterization: [
+                    "Hito de Terminación: El contrato finaliza exactamente cuando se entrega la obra material o labor técnica pactada en el objeto.",
+                    "Sin Preaviso: La terminación está supeditada a un hecho objetivo (el fin de la tarea), por lo cual no requiere notificación de 30 días.",
+                    "Detalle Técnico: Es imperativo que el contrato detalle qué constituye el fin de la obra; de lo contrario, se presume contrato indefinido.",
+                    "Estabilidad Relativa: Si la labor contratada continúa siendo necesaria después del hito, el trabajador adquiere estabilidad laboral."
+                ] 
+            }
         };
 
         const causesEmployer = [
-            { title: "Engaño", desc: "Certificados falsos para admisión." },
-            { title: "Violencia", desc: "Contra el empleador o compañeros." },
-            { title: "Daño Material", desc: "Intencional a bienes de la empresa." },
-            { title: "Incumplimiento Grave", desc: "Violación de obligaciones contractuales." },
-            { title: "Detención", desc: "Si supera los 30 días calendario." },
-            { title: "Bajo Rendimiento", desc: "Capacidad deficiente comprobada." }
+            { title: "Engaño del trabajador", desc: "Presentación de certificados falsos para su admisión o beneficios." },
+            { title: "Actos de violencia", desc: "Grave indisciplina o maltrato contra el empleador, sus familiares o compañeros." },
+            { title: "Daño material intencional", desc: "Causado a edificios, máquinas, materias primas o herramientas de la empresa." },
+            { title: "Actos inmorales", desc: "Cometer actos delictuosos o inmorales en el lugar de trabajo." },
+            { title: "Incumplimiento grave", desc: "Violación de las obligaciones o prohibiciones especiales del trabajador." },
+            { title: "Detención preventiva", desc: "Si el trabajador es detenido por más de 30 días, a menos que sea absuelto." },
+            { title: "Revelación de secretos", desc: "Dar a conocer información técnica o comercial con perjuicio para la empresa." },
+            { title: "Bajo rendimiento", desc: "Deficiente capacidad en relación con el rendimiento promedio de la labor." },
+            { title: "Indisciplina de seguridad", desc: "Sistemática renuencia a aceptar medidas preventivas o de higiene." }
         ];
 
         const causesEmployee = [
-            { title: "Engaño Empleador", desc: "Respecto a condiciones pactadas." },
-            { title: "Maltrato", desc: "Violencia o amenazas del patrón." },
-            { title: "Mora en Salarios", desc: "Incumplimiento de pagos legales." }
+            { title: "Engaño del empleador", desc: "Respecto a las condiciones reales de trabajo al momento de la firma." },
+            { title: "Maltrato o amenazas", desc: "Cualquier acto de violencia o maltrato físico/moral por parte del patrón." },
+            { title: "Inducción al ilícito", desc: "Obligar al trabajador a cometer actos ilegales o inmorales." },
+            { title: "Peligro para la seguridad", desc: "Existencia de riesgos graves para la salud que el empleador no mitigue." },
+            { title: "Perjuicios maliciosos", desc: "Daño causado intencionalmente por el empleador a las herramientas del trabajador." },
+            { title: "Impago de salarios", desc: "Incumplimiento sistemático de las obligaciones de pago de remuneración." }
         ];
 
         function init() {
@@ -340,7 +422,7 @@
             const container = document.getElementById('duration-accordion');
             Object.entries(contractTypes).forEach(([key, info]) => {
                 const item = document.createElement('div');
-                item.className = 'accordion-item bg-white rounded-[2rem] border border-slate-200';
+                item.className = 'accordion-item bg-white rounded-[2rem] border border-slate-200 transition-all hover:border-indigo-300 shadow-sm';
                 item.innerHTML = `
                     <button onclick="this.parentElement.classList.toggle('active')" class="w-full flex items-center justify-between p-8 text-left">
                         <div class="flex items-center gap-6">
@@ -350,13 +432,13 @@
                                 <p class="text-sm text-indigo-600 font-black uppercase tracking-widest">${info.description}</p>
                             </div>
                         </div>
-                        <i data-lucide="chevron-down" class="chevron w-8 h-8 text-slate-300"></i>
+                        <i data-lucide="chevron-down" class="chevron w-8 h-8 text-slate-300 transition-transform"></i>
                     </button>
                     <div class="accordion-content">
                         <div class="px-8 pb-10 border-t border-slate-100 pt-8">
                             <div class="bg-indigo-50 p-8 rounded-3xl border border-indigo-100">
                                 <ul class="space-y-4">
-                                    ${info.characterization.map(c => `<li class="flex gap-4 text-xl text-indigo-900 font-semibold"><div class="w-2.5 h-2.5 rounded-full bg-indigo-500 mt-3 flex-shrink-0"></div>${c}</li>`).join('')}
+                                    ${info.characterization.map(c => `<li class="flex gap-4 text-xl text-indigo-900 font-semibold leading-relaxed"><div class="w-2.5 h-2.5 rounded-full bg-indigo-500 mt-3 flex-shrink-0"></div>${c}</li>`).join('')}
                                 </ul>
                             </div>
                         </div>
@@ -369,10 +451,10 @@
 
         function renderCauses() {
             causesEmployer.forEach(c => {
-                document.getElementById('employer-causes').innerHTML += `<div class="bg-white p-6 rounded-3xl border-l-8 border-l-rose-500 shadow-sm"><h4 class="text-xl font-black text-slate-800">${c.title}</h4><p class="text-base text-slate-500 font-medium">${c.desc}</p></div>`;
+                document.getElementById('employer-causes').innerHTML += `<div class="bg-white p-6 rounded-3xl border-l-8 border-l-rose-500 shadow-sm"><h4 class="text-xl font-black text-slate-800">${c.title}</h4><p class="text-base text-slate-500 font-medium leading-relaxed">${c.desc}</p></div>`;
             });
             causesEmployee.forEach(c => {
-                document.getElementById('employee-causes').innerHTML += `<div class="bg-white p-6 rounded-3xl border-l-8 border-l-emerald-500 shadow-sm"><h4 class="text-xl font-black text-slate-800">${c.title}</h4><p class="text-base text-slate-500 font-medium">${c.desc}</p></div>`;
+                document.getElementById('employee-causes').innerHTML += `<div class="bg-white p-6 rounded-3xl border-l-8 border-l-emerald-500 shadow-sm"><h4 class="text-xl font-black text-slate-800">${c.title}</h4><p class="text-base text-slate-500 font-medium leading-relaxed">${c.desc}</p></div>`;
             });
         }
 
@@ -394,46 +476,29 @@
             const city = document.getElementById('location').value || '[CIUDAD]';
             const employee = document.getElementById('employee-name').value || '[TRABAJADOR]';
             const id = document.getElementById('employee-id').value || '[DOCUMENTO]';
-            const salary = document.getElementById('contract-salary').value || '0';
+            const salaryValue = document.getElementById('contract-salary').value || '0';
             const start = document.getElementById('start-date').value || '[FECHA INICIO]';
             const end = document.getElementById('end-date').value || '[FECHA FIN]';
             const object = document.getElementById('work-object').value || '[CARGO]';
-            
             const conf = document.getElementById('clause-conf').checked;
             const excl = document.getElementById('clause-excl').checked;
-
             const typeLabel = contractTypes[type].name.toUpperCase();
             const isPractica = type === 'practica';
-            const isAprendizaje = type === 'aprendizaje';
 
             let text = `${isPractica ? 'CONVENIO DE PRÁCTICA ACADÉMICA' : 'CONTRATO INDIVIDUAL DE TRABAJO ' + typeLabel}\n\n`;
             text += `CIUDAD: ${city}\n`;
             text += `FECHA DE ELABORACIÓN: ${new Date().toLocaleDateString()}\n\n`;
-            
-            text += `Entre los suscritos a saber: ${employer}, sociedad legalmente constituida con NIT ${nit}, representada por ${rep}, en adelante EL EMPLEADOR, y de otra parte ${employee}, identificado con documento ${id}, en adelante EL TRABAJADOR, se ha convenido celebrar el presente contrato bajo las siguientes cláusulas:\n\n`;
-            
-            text += `PRIMERA. OBJETO: El trabajador se obliga a desempeñar las funciones de: ${object}.\n\n`;
-            
-            if(isPractica) {
-                text += `SEGUNDA. NATURALEZA: Documento estrictamente educativo. Se pacta un auxilio económico mensual de $${parseFloat(salary).toLocaleString()}.\n\n`;
-            } else {
-                text += `SEGUNDA. REMUNERACIÓN: EL EMPLEADOR pagará un SALARIO mensual de $${parseFloat(salary).toLocaleString()} COP con plenos derechos de ley conforme a la Reforma Laboral 2025.\n\n`;
-            }
-
-            text += `TERCERA. DURACIÓN: El contrato inicia el día ${start}. `;
-            if(['fijo', 'aprendizaje', 'ocasional'].includes(type)) {
-                text += `Tendrá vigencia hasta el día ${end}. `;
-                if(type === 'fijo') text += `\nNOTA LEY 2466: Superados los 3 años, pasará a ser Indefinido automáticamente.`;
-            } else {
-                text += `Su duración será indefinida mientras subsistan las causas que le dieron origen.`;
-            }
+            text += `Entre los suscritos a saber: ${employer}, sociedad legalmente constituida con NIT ${nit}, representada por su Representante Legal ${rep}, en adelante EL EMPLEADOR, y de otra parte ${employee}, con documento de identidad No. ${id}, en adelante EL TRABAJADOR, se ha convenido celebrar el presente contrato bajo las siguientes cláusulas:\n\n`;
+            text += `PRIMERA. OBJETO: El trabajador desempeñará las funciones de: ${object}.\n\n`;
+            if(isPractica) text += `SEGUNDA. NATURALEZA: Documento estrictamente educativo. Auxilio económico mensual de $${parseFloat(salaryValue).toLocaleString()}.\n\n`;
+            else text += `SEGUNDA. REMUNERACIÓN: EL EMPLEADOR pagará un SALARIO mensual de $${parseFloat(salaryValue).toLocaleString()} COP con plenos derechos de ley.\n\n`;
+            text += `TERCERA. DURACIÓN: Desde el ${start}. `;
+            if(['fijo', 'aprendizaje', 'ocasional'].includes(type)) text += `Vence el ${end}. `;
+            else text += `Duración indefinida mientras subsistan las causas que le dieron origen.`;
             text += `\n\n`;
-
-            if(conf) text += `CUARTA. CLÁUSULA DE CONFIDENCIALIDAD: El trabajador se obliga a guardar absoluta reserva sobre secretos industriales y comerciales del empleador.\n\n`;
-            if(excl) text += `QUINTA. EXCLUSIVIDAD: El trabajador prestará sus servicios de manera exclusiva a EL EMPLEADOR, absteniéndose de laborar para la competencia.\n\n`;
-
-            text += `\nEn señal de conformidad se firma:\n\n\n__________________________          __________________________\nPOR EL EMPLEADOR                    POR EL TRABAJADOR\nNIT: ${nit}                         CC: ${id}`;
-
+            if(conf) text += `CUARTA. CONFIDENCIALIDAD: El trabajador guardará reserva sobre información técnica y comercial.\n\n`;
+            if(excl) text += `QUINTA. EXCLUSIVIDAD: El trabajador prestará sus servicios de manera exclusiva a EL EMPLEADOR.\n\n`;
+            text += `\nEn señal de conformidad se firma:\n\n\n__________________________          __________________________\nPOR EL EMPLEADOR                    POR EL TRABAJADOR / ESTUDIANTE\nNIT: ${nit}                         CC: ${id}`;
             document.getElementById('minute-placeholder').classList.add('hidden');
             document.getElementById('minute-preview').classList.remove('hidden');
             document.getElementById('printable-area').innerText = text;
@@ -443,7 +508,7 @@
             const salary = parseFloat(document.getElementById('calc-salary').value) || 0;
             const start = new Date(document.getElementById('calc-start').value);
             const end = new Date(document.getElementById('calc-end').value);
-            if (!salary || isNaN(start) || isNaN(end)) return;
+            if (!salary || isNaN(start.getTime()) || isNaN(end.getTime())) return;
             const years = (end - start) / (1000 * 60 * 60 * 24 * 365);
             const isBefore1992 = start < new Date('1992-12-01');
             const isHighSalary = salary > (SMLV_2026 * 10);
